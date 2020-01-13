@@ -1,6 +1,6 @@
-# Terraform on Oracle Cloud (Minimal configuration)
+# Terraform on Oracle Cloud (minimal configuration)
 
-This code provides an example of how to use Terraform with Oracle Cloud. This is a minimal configuration, no resources will be provisioned. The only thing the script will do, is list the availability domains that are available and output the result:
+This code provides an example of how to use Terraform with Oracle Cloud. This is a minimal configuration, no resources will be provisioned. The only thing the script will do, is list the [availability domains](https://docs.cloud.oracle.com/iaas/Content/GSG/Concepts/concepts.htm) that are available and output the result:
 
 ```
 # Get a list of Availability Domains
