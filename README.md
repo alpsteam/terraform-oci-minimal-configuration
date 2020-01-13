@@ -28,7 +28,7 @@ unzip terraform_0.12.19_linux_amd64.zip
 mv terraform_0.12.19_linux_amd64/terraform /usr/local/bin
 ```
 
-Verify the Terraform installation with `terraform version`.
+Verify the Terraform installation with `terraform version`, which should output something like `Terraform v0.12.19`.
 
 **Windows:**
 
@@ -40,9 +40,9 @@ For Terraform to work correctly with your Oracle Cloud tenancy you will need to 
 
 Finally, run `source env_vars` to set the variables. You can check if your environment variables were set correctly by running `echo $TF_VAR_region` etc.
 
-**Important!** If you created your private key with a password, you will need to specify the password within the `env_vars` file.
+**Important!** If you created your **private key with a password**, you will need to specify the password within the `env_vars` file. E.g. `export TF_VAR_private_key_path=~/.ssh/oci_api_key.pem`
 
-### 3) Apply Terraform script
+### 3) Run the Terraform script
 
 Change directory into the `terraform-oci-minimal-configuration/` folder.
 ```
@@ -54,7 +54,7 @@ You don't yet have the specific Terraform provider for Oracle Cloud. You can eas
 terraform init
 ls -a
 ```
-Now you are all set. Check if the Terraform provider for Oracle Cloud is working correctly with the code above by running `terraform validate`. 
+Now you are all set. Check if the Terraform provider for Oracle Cloud is was downloaded correctly by running `terraform version`. Your output should be `Terraform v0.12.19 + provider.oci v3.57.0`. 
 
 If all environment variables are set correctly you should also be able to run `terraform plan` and `terraform apply`. An example output might look like this.
 
@@ -76,7 +76,7 @@ actions need to be performed.
 
 ```
 
-If you get an error `Service error:NotAuthenticated. The required information to complete authentication was not provided or was incorrect.. ` you need to re-ckeck if: (1) you uploaded your public key correctly, (2) supplied all environment variables correctly, (3) specified a private key password if necessary.
+If you get an error `Service error:NotAuthenticated. The required information to complete authentication was not provided or was incorrect.. ` you need to re-ckeck if: (1) you uploaded your public key correctly, (2) supplied all environment variables correctly, (3) your local private key is accessible, (4) specified a private key password if necessary.
 
 ### 4) Next steps
 
