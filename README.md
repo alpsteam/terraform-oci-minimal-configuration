@@ -40,6 +40,8 @@ For Terraform to work correctly with your Oracle Cloud tenancy you will need to 
 
 Finally, run `source env_vars` to set the variables. You can check if your environment variables were set correctly by running `echo $TF_VAR_region` etc.
 
+**Important!** If you created your private key with a password, you will need to specify the password within the `env_vars` file.
+
 ### 3) Apply Terraform script
 
 Change directory into the `terraform-oci-minimal-configuration/` folder.
@@ -57,10 +59,25 @@ Now you are all set. Check if the Terraform provider for Oracle Cloud is working
 If all environment variables are set correctly you should also be able to run `terraform plan` and `terraform apply`. An example output might look like this.
 
 ```
+➜  terraform-oci-minimal-configuration git:(master) ✗ terraform plan
+Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+
+data.oci_identity_availability_domains.ads: Refreshing state...
+
+------------------------------------------------------------------------
+
+No changes. Infrastructure is up-to-date.
+
+This means that Terraform did not detect any differences between your
+configuration and real physical resources that exist. As a result, no
+actions need to be performed.
 
 ```
 
+If you get an error `Service error:NotAuthenticated. The required information to complete authentication was not provided or was incorrect.. ` you need to re-ckeck if: (1) you uploaded your public key correctly, (2) supplied all environment variables correctly, (3) specified a private key password if necessary.
 
 ### 4) Next steps
 
-
+Continue with a more complex Terraform configuration like [this](https://github.com/alpsteam/terraform-oci-simple-webserver).
