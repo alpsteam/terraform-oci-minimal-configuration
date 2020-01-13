@@ -38,6 +38,8 @@ todo
 
 For Terraform to work correctly with your Oracle Cloud tenancy you will need to set some environment variables first. Find all necessary environment variables in the [terraform-oci-minimal-configuration/env_vars file](env_vars). You need to replace every `XXXXXXXXXXXXX` with the correct values. Find instructions on how to aquire these values [here](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#Other). You will need to upload a public key to the Oracle Cloud console in the process.
 
+You can check if your environment variables were set correctly by running `echo $TF_VAR_region` etc.
+
 ### 3) Apply Terraform script
 
 Change directory into the `terraform-oci-minimal-configuration/` folder.
