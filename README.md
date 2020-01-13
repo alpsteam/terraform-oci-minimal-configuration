@@ -1,4 +1,6 @@
-# terraform-oci-minimal-configuration
+# Terraform on Oracle Cloud (Minimal configuration)
+
+This code provides an example of how to use Terraform with Oracle Cloud (minimal config, no resources are provisioned).
 
 ### 1) Install Terraform CLI
 
